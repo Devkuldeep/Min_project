@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Collection</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f4f8fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            max-width: 90vw;
+            min-height: 90vh;
+            background: white;
+            padding: 30px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .text-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .text-content h1 {
+            font-size: 70px;
+            font-weight: bold;
+            color: #222;
+        }
+        .text-content p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .more {
+            display: inline-block;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        .more::after {
+            content: '→';
+            margin-left: 10px;
+            transition: margin-left 0.3s;
+        }
+        .more:hover::after {
+            margin-left: 15px;
+        }
+        .image-content {
+            flex: 1;
+        }
+        .image-content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .social-icons {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
+        .social-icons a {
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-content">
+            <h1>Aqua</h1>
+            <p>As you probably already guessed, this collection is dedicated to Aqua color. Without a doubt, Aqua is one of the most important colors, which is fresh.</p>
+            <div class="more">More</div>
+        </div>
+        <div class="image-content">
+            <img src="https://media.istockphoto.com/id/1040308104/photo/mature-handsome-business-man.jpg?s=612x612&w=0&k=20&c=QbyH3XFmLOoy8NESjLQC8PYsm6g3UBL6COFaF-Qnnbk=" alt="Fashion Model">
+        </div>
+    </div>
+    <div class="social-icons">
+        <a href="#">&#xf16d;</a>
+        <a href="#">&#xf231;</a>
+        <a href="#">&#xf099;</a>
+    </div>
+    <script>
+        gsap.from(".text-content h1", {opacity: 0, x: -50, duration: 1, ease: "power2.out"});
+        gsap.from(".text-content p", {opacity: 0, y: 20, duration: 1.2, delay: 0.5, ease: "power2.out"});
+        gsap.from(".image-content img", {opacity: 0, x: 50, duration: 1.5, delay: 0.5, ease: "power2.out"});
+        gsap.from(".more", {opacity: 0, y: 10, duration: 1.2, delay: 1, ease: "power2.out"});
+        gsap.from(".social-icons a", {opacity: 0, y: 20, duration: 1, stagger: 0.3, delay: 1, ease: "power2.out"});
+    </script>
+</body>
+</html>
